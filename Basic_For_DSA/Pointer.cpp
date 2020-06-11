@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-int a=10; //Data variable   //Every varible decalred will be in stack
+int a=10; //Data variable   //Every varible declared will be in stack
     int *p; //Adreess variable
     p=&a; //Store address of a
     cout<<a<<endl; //10

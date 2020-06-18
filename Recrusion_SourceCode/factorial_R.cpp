@@ -3,11 +3,11 @@ using namespace std;
 
 int fact(int n)
 {
-    if(n==0)
+    if(n<=1) /* Base Condition */
     return 1;
     else
     {
-        return fact(n-1)*n;
+        return fact(n-1)*n;  /* Recrusive Case */
     }
     
 }

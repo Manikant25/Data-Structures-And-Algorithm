@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int fun(int n)
+{
+    static int i=1;
+    if(i>5)
+    return n;
+    n=n+i;
+    i++;
+    return fun(n);
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<fun(n);
+    return 0;
+}

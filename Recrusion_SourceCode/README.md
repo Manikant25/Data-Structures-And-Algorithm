@@ -19,12 +19,12 @@ point, the function encounters a subtask that it can perform without calling its
 the function does not recur, is called the base case. The former, where the function calls itself to
 perform a subtask, is referred to as the ecursive case. We can write all recursive functions using
 the format: if(test for the base case)
-               return some base case value
-               else if(test for another base case)
-               return some other base case value
-               //the recrusive case
-               else
-               return(some work and then a recrusive call)
+return some base case value
+else if(test for another base case)
+return some other base case value
+//the recrusive case
+else
+return(some work and then a recrusive call)
                
                
             

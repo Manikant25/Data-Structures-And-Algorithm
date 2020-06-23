@@ -17,7 +17,7 @@ using namespace std;
      int a,sum=0;
      cin>>a;
      foo(a,sum);
-     cout<<sum;
+     cout<<endl<<sum;
      return 0;
  }
 

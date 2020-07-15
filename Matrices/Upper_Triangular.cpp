@@ -1,23 +1,24 @@
+//Column major
 #include <iostream>
 using namespace std;
-class Diagonal
+class upper
 {
 private:
-
  int *A;
  int n;
 public:
- Diagonal()
+ upper() //Defualt constructor 
  {
  n=2;
- A=new int[2];
+ A=new int[2*(2+1)/2];
  }
- Diagonal(int n)
+ upper(int n)
  {
  this->n=n;
- A=new int[n];
+ A=new int[n*(n+1)/2];
  }
- ~Diagonal()
+
+ ~upper()
  {
  delete []A;
  }
@@ -25,40 +26,43 @@ public:
  int Get(int i,int j);
  void Display();
  int GetDimension()
- {return n;}
+ {return n;
+ }
+
 };
-void Diagonal::Set(int i,int j,int x)
+void upper::Set(int i,int j,int x)
 {
- if(i==j)
- A[i-1]=x;
+ if(i<=j)
+ A[(i-1)*n-(i-2)*(i-1)/2+(j-i)]=x; 
 }
-int Diagonal::Get(int i,int j)
+int upper::Get(int i,int j)
 {
- if(i==j)
- return A[i-1];
+ if(i<=j)
+ return A[(i-1)*n-(i-2)*(i-1)/2+(j-i)];
  return 0;
 }
-void Diagonal::Display()
+void upper::Display()
 {
  for(int i=1;i<=n;i++)
  {
  for(int j=1;j<=n;j++)
  {
- if(i==j)
- cout<<A[i-1]<<" ";
+ if(i<=j)
+ cout<<A[(i-1)*n-(i-2)*(i-1)/2+(j-i)]<<" "; 
  else
- cout<<"0"<<" ";
+ cout<<"0 ";
  }
  cout<<endl;
  }
 }
+
 int main()
 {
  int d;
  cout<<"Enter Dimensions";
  cin>>d;
 
- Diagonal dm(d);
+ upper dm(d);
 
  int x;
  cout<<"Enter All Elements";
